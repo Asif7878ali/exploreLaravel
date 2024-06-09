@@ -83,11 +83,8 @@ class UserController extends Controller
         $user = Userinfo::find($id);
         if(isset($user)){
              //id is found
-             $url  = url('/update').'/'.$id;
-             $title = 'Update User';
-             $btn = 'Update';
-             $data = compact('user' , 'url' , 'title' , 'btn');
-             return view('form')->with($data);
+             $data = compact('user');
+             return view('updateForm')->with($data);
         }  else  {
                //id is not found
             return redirect('/view/data');

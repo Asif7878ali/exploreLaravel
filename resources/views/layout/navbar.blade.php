@@ -23,7 +23,7 @@
             <li><a href="/" class=" hover:font-extrabold">Home</a></li>
             <li><a href="/view/data" class=" hover:font-extrabold">View</a></li>
             <li><a href="" class=" hover:font-extrabold">Services</a></li>
-            <li><a href="/form" class=" hover:font-extrabold">Contact</a></li>
+            <li><a href="/form" class=" hover:font-extrabold">Registration</a></li>
         </ul>
     </div>
 
@@ -33,7 +33,7 @@
             <li><a href="/" class="block px-4 py-2 rounded-md">Home</a></li>
             <li><a href="/view/data" class="block px-4 py-2 rounded-md">View</a></li>
             <li><a href="#" class="block px-4 py-2 rounded-md">Services</a></li>
-            <li><a href="/form" class="block px-4 py-2 rounded-md">Contact</a></li>
+            <li><a href="/form" class="block px-4 py-2 rounded-md">Registration</a></li>
         </ul>
     </div>
 </nav>
