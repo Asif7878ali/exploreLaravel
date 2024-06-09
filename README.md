@@ -13,6 +13,8 @@ This is a Crud app in laravel and app Feature is User can i Register himself and
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+<p align="center"><img src="public/profiles/LaravelCrud.png" width="400" alt="Laravel Logo"></p>
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
