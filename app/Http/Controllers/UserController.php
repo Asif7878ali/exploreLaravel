@@ -55,7 +55,7 @@ class UserController extends Controller
         $userTable->Birtday = $formData->birthday;
         $userTable->Gender = $formData->gender;
         $userTable->Course = json_encode($formData->course); 
-        $userTable->Password = bcrypt($formData->password);
+        $userTable->Password = $formData->password;
 
         $userTable->save();
 

@@ -59,6 +59,44 @@
         </button>
     </div>
 
+    <script>
+        $(document).ready(function() {
+            var currentIndex = 0;
+            var items = $('[data-carousel-item]');
+            var itemAmt = items.length;
+
+            function cycleItems() {
+                var item = $('[data-carousel-item]').eq(currentIndex);
+                items.hide();
+                item.css('display', 'block');
+            }
+
+            $('[data-carousel-next]').click(function() {
+                currentIndex += 1;
+                if (currentIndex > itemAmt - 1) {
+                    currentIndex = 0;
+                }
+                cycleItems();
+            });
+
+            $('[data-carousel-prev]').click(function() {
+                currentIndex -= 1;
+                if (currentIndex < 0) {
+                    currentIndex = itemAmt - 1;
+                }
+                cycleItems();
+            });
+
+            $('[data-carousel-slide-to]').click(function() {
+                var index = $(this).data('carousel-slide-to');
+                currentIndex = index;
+                cycleItems();
+            });
+
+            cycleItems();
+        });
+    </script>
+
   @endsection
 </body>
 </html>

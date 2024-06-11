@@ -1,6 +1,8 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 
+
+
 ## About Laravel_Crud
 
 This is a Crud app in laravel and app Feature is User can i Register himself and view a in table and update a user Profile Crud add Name , Image , Email , Gender , List of Courser ,Choose a Password and Confirm it and User enter a password user can visible a password just click see password buttons. 

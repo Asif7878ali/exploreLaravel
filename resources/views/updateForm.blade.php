@@ -9,7 +9,7 @@
 </head>
 
 <body>
-       {{dd($user->Profile);}}
+       {{-- {{dd($user->Profile);}} --}}
     @section('main-section')
         <div class="max-w-md mx-auto mb-5">
              <h1 class="text-2xl font-bold text-center mb-3">Update User</h1>
@@ -18,7 +18,11 @@
                          {{-- profile --}}
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="profile">Profile</label>
-                       <input type="file" id="image" name="image" accept="image/*" value="{{$user->Profile ?? ''}}">
+                    @if($user->Profile)
+                    <img src="{{ asset( $user->Profile) }}" alt="Profile Image" class="mb-2 w-20 h-20 object-cover rounded-full">
+                     @endif
+                       <input type="file" id="image" name="image" accept="image/*">
+                      
                        <div>
                         <span class="text-red-600">
                             @error('image')
