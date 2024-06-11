@@ -10,8 +10,11 @@ Route::get('/form', function(){
     return view('form');
 } );
 //All Api Routes
-Route::post('/register' , [UserController::class , 'store']);
-Route::get('/view/data' , [UserController::class , 'view']);
-Route::get('/delete/{id}' , [UserController::class , 'delete']);
-Route::get('/edit/{id}' , [UserController::class , 'edit']);
-Route::post('/update/{id}' , [UserController::class , 'update']);
+Route::post('/register', [UserController::class , 'store']);
+Route::get('/view/data', [UserController::class , 'view']);
+Route::get('/delete/{id}', [UserController::class , 'delete']);
+Route::get('/edit/{id}', [UserController::class , 'edit']);
+Route::post('/update/{id}', [UserController::class , 'update']);
+Route::get('/trash', [UserController::class , 'trash']);
+Route::get('/restore/{id}', [UserController::class, 'restore']);
+Route::get('/permanentdelete/{id}', [UserController::class , 'permanentdelete'] );

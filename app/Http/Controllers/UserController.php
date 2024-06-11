@@ -69,14 +69,36 @@ class UserController extends Controller
 
     }
 
+    function trash(){
+         $user = Userinfo::onlyTrashed()->get();
+         return view('userBackupAccount' , compact('user'));
+    }
+
     function delete($id){
         $user = Userinfo::find($id);
-        if(isset($user)){
+        if(isset($user)) {
              // id is found
              $user->delete();
         }
            // id is not found
         return redirect('/view/data');
+    }
+
+    function restore($id){
+        $user = Userinfo::withTrashed()->find($id);
+        if(isset($user)) {
+             $user->restore();
+        }
+       
+        return redirect('/trash');
+    }
+   
+    function permanentdelete($id){
+             $user = Userinfo::withTrashed()->find($id);
+             if(isset($user)) {
+                 $user->forceDelete();
+             }
+         return redirect('/trash');    
     }
 
     function edit($id){
