@@ -62,11 +62,15 @@ class UserController extends Controller
         return response()->json(['success' => 'User data successfully saved'], 200);
     }
 
-    function view(){
-        $user = Userinfo::all();
-        // dd($user);
-        return view('customerview', compact('user'));
-
+    function view(Request $request){
+        $search = $request['search'] ?? '';
+        if($search != '') {
+            //where clause
+            $user = Userinfo::where('Name', 'LIKE',"%$search%")->orwhere('Email', 'LIKE',"%$search%")->get();
+        } else {
+            $user = Userinfo::all();
+        }
+        return view('customerview', compact('user', 'search'));
     }
 
     function trash(){

@@ -9,7 +9,17 @@
 <body>
     @section('main-section')
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right">
+    <form class="max-w-md mx-auto">   
+            <div class="relative">
+                <input type="search" name="search" id="search" value="{{$search}}" class="block w-full p-4 ps-10 text-sm border border-gray-300 rounded-lg bg-gray-50 kfocus:ring-blue-500" placeholder="Name or E-mail" required />
+                <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+            </div>
+    </form>
+       <a href={{url('/view/data')}}>
+          <button type="submit" class="text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-4 py-2">Reset</button>
+       </a>
+      
+    <table class="w-full text-sm text-left rtl:text-right mt-5">
         <thead class="text-xs bg-slate-300">
             <tr>
                 <th scope="col" class="px-6 py-3">
