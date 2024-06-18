@@ -44,7 +44,6 @@ class UserController extends Controller
        } else {
            return response()->json(['error' => ['image' => ['The image failed to upload.']]], 422);
        }
-
         // Save user data into the database
         $userTable = new Userinfo();
         $userTable->Profile = $path . $filename;
@@ -56,9 +55,7 @@ class UserController extends Controller
         $userTable->Gender = $formData->gender;
         $userTable->Course = json_encode($formData->course); 
         $userTable->Password = $formData->password;
-
         $userTable->save();
-
         return response()->json(['success' => 'User data successfully saved'], 200);
     }
 
@@ -68,7 +65,7 @@ class UserController extends Controller
             //where clause
             $user = Userinfo::where('Name', 'LIKE',"%$search%")->orwhere('Email', 'LIKE',"%$search%")->get();
         } else {
-            $user = Userinfo::all();
+            $user = Userinfo::paginate(10);
         }
         return view('customerview', compact('user', 'search'));
     }

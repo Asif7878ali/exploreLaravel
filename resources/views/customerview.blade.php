@@ -18,6 +18,7 @@
        <a href={{url('/view/data')}}>
           <button type="submit" class="text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-4 py-2">Reset</button>
        </a>
+       
       
     <table class="w-full text-sm text-left rtl:text-right mt-5">
         <thead class="text-xs bg-slate-300">
@@ -52,9 +53,8 @@
                  </th>
             </tr>
         </thead>
-        <tbody>
+        <tbody>             
             @foreach ($user as $data )
-                {{-- {{dd($data->Profile);}} --}}
             <tr class="">
                 <td  class="px-6 py-4 font-medium whitespace-nowrap">
                     <img src="{{ asset ($data->Profile) }}" alt="Profile Image" class="w-20 h-20 rounded-full">
@@ -83,13 +83,15 @@
                 <td class="px-6 py-4 space-x-5">
                     <a href="{{url('/edit/')}}/{{$data->User_ID}}" class="font-medium text-blue-600 hover:underline cursor-pointer">Edit</a>
                     <a href="{{url('/delete/')}}/{{$data->User_ID}}" class="font-medium text-red-600 hover:underline cursor-pointer">Delete</a>
-                </td>
-                
+                </td>                
             </tr>
             @endforeach
 
         </tbody>
     </table>
+      <div>
+        {{ $user->links() }}
+      </div>
 </div>
   @endsection
 </body>
