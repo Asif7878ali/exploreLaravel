@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="{{ asset('js/formclientvalidation.js') }}"></script>
 </head>
 
 <body>
@@ -216,34 +218,6 @@
                 </div>
             </form>
         </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const seePwdCheckbox = document.getElementById('see_pwd');
-                const seeConfirmPwdCheckbox = document.getElementById('see_confirm_pwd');
-                const passwordField = document.getElementById('password');
-                const confirmPasswordField = document.getElementById('confirm_password');
-    
-                // Function to toggle password visibility
-                function togglePasswordVisibility(checkbox, passwordField) {
-                    if (checkbox.checked) {
-                        passwordField.type = 'text';
-                    } else {
-                        passwordField.type = 'password';
-                    }
-                }
-    
-                // Event listener for password checkbox
-                seePwdCheckbox.addEventListener('change', function () {
-                    togglePasswordVisibility(this, passwordField);
-                });
-    
-                // Event listener for confirm password checkbox
-                seeConfirmPwdCheckbox.addEventListener('change', function () {
-                    togglePasswordVisibility(this, confirmPasswordField);
-                });
-            });
-        </script>
     @endsection
 </body>
 
