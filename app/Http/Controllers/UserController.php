@@ -44,6 +44,24 @@ class UserController extends Controller
        } else {
            return response()->json(['error' => ['image' => ['The image failed to upload.']]], 422);
        }
+
+       // Raw Queries
+       // Question Mark SQL Injection se bachne ke liye
+       // DB::insert('INSERT into userinfo(Profile, Name, Email, Contact, Address , Birthday, Gender, Course , Password) VALUES(?,?,?,?,?,?,?,?,?) ',[$formData->image,$formData->name,$formData->email, $formData->contact,$formData->address,$formData->birthday,$formData->gender,$formData->course,$formData->password]);
+
+       //Query Builder
+       //DB::table('userinfo')->insert([
+          // 'Profile' => $formData->image,
+          // 'Name' => $formData->name 
+          // 'Email' => $formData->email 
+          // 'Contact' => $formData->contact 
+          // 'Address' => $formData->address 
+          // 'Birthday' => $formData->birthday 
+          // 'Gender' => $formData->gender 
+          // 'Course' => $formData->course 
+          // 'Password' => $formData->password 
+        // ]);
+
         // Save user data into the database
         $userTable = new Userinfo();
         $userTable->Profile = $path . $filename;
@@ -160,4 +178,3 @@ class UserController extends Controller
 
     }
 }
-
